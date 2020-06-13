@@ -59,4 +59,4 @@ def index():
   return render_template('search.html',word=text, search_result=df.to_html(classes='books'))
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(debug=True, host='0.0.0.0', port=5000)
