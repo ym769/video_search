@@ -4,7 +4,7 @@ from whoosh.index import open_dir
 from whoosh.fields import *
 from whoosh.qparser import QueryParser, OrGroup
 #import pandas as pd
-import MeCab
+from janome.tokenizer import Tokenizer
 
 app = Flask(__name__)
 
@@ -21,9 +21,10 @@ def index():
   schema = Schema(title=TEXT(stored=True), content=TEXT, url=STORED, created_at=STORED, inn=STORED, out=STORED)
   ix = open_dir('daigo_search_dir')
 
-  tagger = MeCab.Tagger("-Owakati")
-  str_output = tagger.parse(text)
-  print(str_output)
+  t = Tokenizer()
+  str_output = ""
+  for token in t.tokenize(text):
+    str_output += token.surface + " "
 
 
   with ix.searcher() as searcher:
