@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request
 import pandas as pd
+import os
 from whoosh.index import open_dir
 from whoosh.fields import *
 from whoosh.qparser import QueryParser, OrGroup
