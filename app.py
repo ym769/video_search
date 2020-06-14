@@ -51,7 +51,7 @@ def index():
               urls.append(r["url"])
           oldr = r
 
-      df = pd.DataFrame(columns=['Title', 'URL','Timestamp'])
+      df = pd.DataFrame(columns=['動画タイトル', 'URL','この辺りかも'])
       df["Title"] = titles
       df["Timestamp"] = timestamps
       df["URL"] = urls
