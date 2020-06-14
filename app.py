@@ -52,8 +52,8 @@ def index():
           oldr = r
 
       df = pd.DataFrame(columns=['動画タイトル', 'URL','この辺りかも'])
-      df["Title"] = titles
-      df["Timestamp"] = timestamps
+      df["動画タイトル"] = titles
+      df["この辺りかも"] = timestamps
       df["URL"] = urls
 
 #  return render_template('search.html',word=text, search_result=df.to_html(classes='books'))
