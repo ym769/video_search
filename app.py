@@ -57,7 +57,7 @@ def index():
       df["URL"] = urls
 
 #  return render_template('search.html',word=text, search_result=df.to_html(classes='books'))
-  return render_template('search.html',word=text, search_result=df.to_html(classes='books'))
+  return render_template('index.html',word=text, search_result=df.to_html(classes='books',index=False,justify="center"))
 
 if __name__ == '__main__':
   port = int(os.environ.get("PORT", 5000))
